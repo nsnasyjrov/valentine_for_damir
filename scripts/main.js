@@ -8,7 +8,7 @@ const photoFolder = "assets/img";
 const photoCount = 10;
 
 const videoFolder = "assets/video";
-const videoFiles = ["video_1.mp4", "video_2.mp4", "video_3.mp4", "video_4.mp4"];
+const videoFiles = ["video_1.MP4", "video_2.MP4", "video_3.MP4", "video_4.MP4"];
 
 // ===== Love текст сверху =====
 const loveTextContainer = document.createElement("div");
