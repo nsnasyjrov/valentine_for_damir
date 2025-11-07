@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Для Камиллы ❤️</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Pacifico&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="card">
+      <h1>
+        С любовью <img src="assets/icons/pink_heart.png" class="inline-heart" />
+      </h1>
+      <p>Ты делаешь этот мир гораздо ярче</p>
+      <button id="magicBtn">Жмякни меня</button>
+    </div>
+
+    <div id="photoModal" class="modal">
+      <div class="modal-content">
+        <span class="closeBtn">&times;</span>
+        <h2>
+          <img src="assets/icons/purple_heart.png" class="inline-heart" />
+          Для тебя
+          <img src="assets/icons/purple_heart.png" class="inline-heart" />
+        </h2>
+
+        <div class="slider">
+          <span class="prev">&#10094;</span>
+          <div class="slides"></div>
+          <span class="next">&#10095;</span>
+        </div>
+      </div>
+    </div>
+
+    <audio id="bgMusic" src="assets/audio/love_music.mp3" loop></audio>
+
+    <div id="loveTextContainer"></div>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
+
