@@ -19,7 +19,7 @@ loveTextContainer.style.width = "90%";
 loveTextContainer.style.whiteSpace = "nowrap"; // строки в ширину
 document.body.appendChild(loveTextContainer);
 
-const loveTextLines = ["Любимая моя, сегодня, ровно год как мы начали встречаться. Год назад звезды сошлись как наши жизненные пути . Поздравляю нас с этой прекрасной датой родная❤️❤️❤️❤️❤️❤️❤️❤️❤️Ты не представляешь насколько сильно я тебя люблю, это нельзя описать словами и действиями ❤️❤️❤️❤️"];
+const loveTextLines = ["Сегодня ровно год как мы вместе любимая!!"];
 
 function showLoveText() {
   loveTextContainer.textContent = "";
