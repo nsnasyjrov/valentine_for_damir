@@ -5,7 +5,7 @@ const music = document.getElementById("bgMusic");
 const slidesContainer = document.querySelector(".slides");
 
 const photoFolder = "assets/img";
-const photoCount = 10;
+const photoCount = 31;
 
 const videoFolder = "assets/video";
 const videoFiles = ["video_1.MP4", "video_2.MP4", "video_3.MP4", "video_4.MP4"];
