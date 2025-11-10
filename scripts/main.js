@@ -19,19 +19,19 @@ loveTextContainer.style.width = "90%";
 loveTextContainer.style.whiteSpace = "nowrap"; // строки в ширину
 document.body.appendChild(loveTextContainer);
 
-const loveTextLines = [
-  "Ты особенная...",
-  "Каждый день с тобой — это счастье",
-  "Ты делаешь этот мир ярче",
-  "И я хочу, чтобы ты это знала ❤️"
-];
+const loveTextLines = ["Любимая моя, сегодня, ровно год как мы начали встречаться. Год назад звезды сошлись как наши жизненные пути . Поздравляю нас с этой прекрасной датой родная❤️❤️❤️❤️❤️❤️❤️❤️❤️Ты не представляешь насколько сильно я тебя люблю, это нельзя описать словами и действиями ❤️❤️❤️❤️"];
 
 function showLoveText() {
   loveTextContainer.textContent = "";
   loveTextContainer.classList.add("show");
 
-  let fullText = loveTextLines.join(" — "); // объединяем в одну строку через разделитель
+  let fullText = loveTextLines.join(" ");
   let i = 0;
+
+  // Сначала показываем текст полностью центрированным
+  loveTextContainer.style.transform = "translateX(0)";
+  loveTextContainer.style.opacity = "1";
+  loveTextContainer.style.transition = "none";
 
   const typingInterval = setInterval(() => {
     if (i < fullText.length) {
@@ -39,16 +39,44 @@ function showLoveText() {
       i++;
     } else {
       clearInterval(typingInterval);
+      
+      // После завершения печати ждем и начинаем анимацию
+      setTimeout(() => {
+        // Исчезаем влево
+        loveTextContainer.style.transition = "transform 2s ease-in-out, opacity 2s ease-in-out";
+        loveTextContainer.style.transform = "translateX(-100%)";
+        loveTextContainer.style.opacity = "0";
+        
+        // После исчезновения влево - появляемся справа
+        setTimeout(() => {
+          loveTextContainer.textContent = fullText; // сразу весь текст
+          loveTextContainer.style.transform = "translateX(100%)";
+          loveTextContainer.style.opacity = "0";
+          
+          // Появление справа
+          setTimeout(() => {
+            loveTextContainer.style.transition = "transform 2s ease-in-out, opacity 2s ease-in-out";
+            loveTextContainer.style.transform = "translateX(0)";
+            loveTextContainer.style.opacity = "1";
+            
+            // Финальное исчезновение
+            setTimeout(() => {
+              loveTextContainer.style.transition = "transform 2s ease-in-out, opacity 2s ease-in-out";
+              loveTextContainer.style.transform = "translateX(-100%)";
+              loveTextContainer.style.opacity = "0";
+              
+              setTimeout(() => {
+                loveTextContainer.textContent = "";
+                loveTextContainer.classList.remove("show");
+              }, 2000);
+            }, 3000);
+            
+          }, 100);
+        }, 2000);
+      }, 2000);
     }
-  }, 80); // скорость печатания
-
-  // Можно скрывать текст через некоторое время
-  setTimeout(() => {
-    loveTextContainer.textContent = "";
-    loveTextContainer.classList.remove("show");
-  }, fullText.length * 80 + 3000);
+  }, 50);
 }
-
 // ===== Добавляем фото =====
 for (let i = 1; i <= photoCount; i++) {
   const img = document.createElement("img");

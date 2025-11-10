@@ -234,23 +234,36 @@ button:hover {
 
 /* ===== Любовный текст ===== */
 .love-text {
-  position: absolute;
-  top: 10px;
-  width: 90%;
-  text-align: center;
-  font-family: 'Pacifico', cursive;
-  font-size: 1.5rem;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateX(100%); /* начинаем справа */
+  font-size: 2.5rem;
+  font-weight: 300;
   color: #fff;
-  opacity: 0;
-  transition: opacity 2s ease, transform 2s ease;
-  transform: translateY(-20px);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+  z-index: 10000;
+  text-align: center;
+  white-space: nowrap;
+  opacity: 1;
+  transition: transform 2s ease-in-out;
   pointer-events: none;
-  z-index: 15;
+  font-family: 'Georgia', serif;
+  letter-spacing: 2px;
 }
 
 .love-text.show {
-  opacity: 1;
-  transform: translateY(0);
+  /* Анимация управляется через transform */
+}
+
+/* Для мобильных */
+@media (max-width: 768px) {
+  .love-text {
+    font-size: 1.8rem;
+    white-space: normal;
+    padding: 0 20px;
+  }
 }
 
 /* ===== Анимация сердца inline ===== */
